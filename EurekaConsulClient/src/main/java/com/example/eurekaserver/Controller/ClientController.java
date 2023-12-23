@@ -18,14 +18,14 @@ public class ClientController {
 
 	@GetMapping
 	public List findAll() {
-		return clientRepository.findAll();
+		return clientService.findAll();
 	}
 
 	@GetMapping("/{id}")
 	public Client findById (@PathVariable Long id) throws Exception{
 
-		 return this.clientRepository.findById(id).orElseThrow(()-> new
-				Exception("Client inexistnt"));
+		 return this.clientService.findById(id);
+
 		 }
 
 	@PostMapping
